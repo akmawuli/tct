@@ -18,6 +18,11 @@ FROM   aaa_communication
 WHERE  code_valide = 1";
 
 $result = mysql_query($sql);
+$trouve=0;
+$id='';
+$raison_sociale='';
+$email='';
+$code_valide='';
 
 if (!$result) {
    echo "Impossible d'exécuter la requête ($sql) dans la base : " . mysql_error();
@@ -30,6 +35,7 @@ if (mysql_num_rows($result) == 0) {
 }
  
 while ($row = mysql_fetch_assoc($result)) {
+ $trouve=1;
    echo $row["userid"];
    echo $row["fullname"];
    echo $row["userstatus"];
