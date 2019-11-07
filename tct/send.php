@@ -14,7 +14,7 @@ if (!mysql_select_db("sicnss")) {
 }
 
 $sql = "select `id`, `raison_sociale`, `email`, `code_valide`
-FROM   aaa_com
+FROM   aaa_communication
 WHERE  code_valide = 1";
 
 $result = mysql_query($sql);
